@@ -34,7 +34,7 @@ ball_water_anim = [258, 259, 260, 261, 0];
 ball_hole_anim = [262, 263, 264, 265, 0];
 
 //array containing par values
-pars = [4, 4, 4, 4, 4, 4, 4, 4, 5, 4, 5, 4, 4, 4, 4, 4];
+pars = [4, 4, 4, 4, 4, 4, 4, 4, 8, 4, 8, 4, 4, 4, 4, 4];
 
 //array containing the score for each level
 scores = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -500,8 +500,8 @@ function Flag(_x, _y){
  }
  this.draw=function(){
   if(this.visible){
-   spr(279,(this.x-2)-gc.camx,this.y-4);
-   spr(280,(this.x-2)-gc.camx,this.y-12);
+   spr(279,(this.x-2)-gc.camx,this.y-4, 0);
+   spr(280,(this.x-2)-gc.camx,this.y-12, 0);
   }
  }
  objs.push(this);
@@ -1752,7 +1752,7 @@ function TIC()
 			gc.windDir = Math.round(Math.random()*3);
 			gc.windSpeed = Math.round(Math.random()*20);
 			gc.par = pars[gc.level];
-			gc.stroke = 0;
+			gc.stroke = 1;
 			//gc.updateLevelOffsets();
 			makeLevelObjects();
 			if(gc.level<8) music(0,0,0,true);
